@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:simple_game/bloc/xoxo_bloc.dart';
 import 'package:simple_game/view/home.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    BlocProvider<XoxoBloc>(
+      create: (context) => XoxoBloc(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -16,6 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: const XoxoHome(),
     );
   }
