@@ -58,3 +58,7 @@ class XoxoUtils {
         (tiles[2] == who && tiles[5] == who && tiles[8] == who);
   }
 }
+
+const playerImage1 = "assets/icons/play2.png";
+const playerImage2 = "assets/icons/play1.png";
+const backGround = "assets/icons/bg.png";
