@@ -16,6 +16,10 @@ class XoxoUtils {
     return resu;
   }
 
+  static String initialMsg() {
+    return "Player 1 move";
+  }
+
   int check(List<int> tiles) {
     int result = 0;
 
