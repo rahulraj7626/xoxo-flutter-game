@@ -30,16 +30,30 @@ class MobileScreen extends StatelessWidget {
         fit: BoxFit.cover,
       )),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          const Spacer(),
+          const Text(
+            "XOXO Game",
+            style: TextStyle(
+                fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600),
+          ),
+          const Spacer(),
+          Text(
+            msg,
+            style: const TextStyle(
+                fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600),
+          ),
+          const Spacer(),
           Container(
-            margin: EdgeInsets.all(2),
-            height: width,
-            width: width,
+            margin: EdgeInsets.all(12),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(12)),
             child: GridView.count(
-              padding: EdgeInsets.all(0),
+              physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.all(0),
+              shrinkWrap: true,
+              childAspectRatio: 1.1,
               crossAxisCount: 3,
               children: [
                 for (var i = 0; i < 9; i++)
@@ -52,31 +66,40 @@ class MobileScreen extends StatelessWidget {
                       child: Center(
                           child: tiles![i] == 0
                               ? const SizedBox()
-                              : Image.asset(tiles![i] == 1
-                                  ? playerImage1
-                                  : playerImage2)),
+                              : Image.asset(
+                                  tiles![i] == 1 ? playerImage1 : playerImage2,
+                                  scale: 1.5,
+                                )),
                     ),
                   )
               ],
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.all(8.0),
-          //   child: Text(
-          //     msg,
-          //     style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
-          //   ),
-          // ),
-          // IconButton(
-          //   icon: Icon(
-          //     Icons.refresh,
-          //     size: 50,
-          //     color: Colors.red[500],
-          //   ),
-          //   onPressed: () {
-          //     context.read<XoxoBloc>().add(ClearXoxo());
-          //   },
-          // ),
+          const Spacer(),
+          OutlinedButton.icon(
+            icon: const Icon(
+              Icons.replay,
+              color: Colors.white,
+            ),
+            label: const Padding(
+              padding: EdgeInsets.all(4.0),
+              child: Text(
+                reset,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            onPressed: () {
+              context.read<XoxoBloc>().add(ClearXoxo());
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              side: const BorderSide(width: 2.0, color: Colors.red),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(32.0),
+              ),
+            ),
+          ),
+          const Spacer(),
         ],
       ),
     );

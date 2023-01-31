@@ -3,21 +3,21 @@ class XoxoUtils {
     String resu = "";
     int r = check(tiles);
     if (r == 1) {
-      resu = " Player 1 Winner";
+      resu = player1win;
     } else if (r == 2) {
-      resu = " Player 2 Winner";
+      resu = player2win;
     } else if (r == 3) {
-      resu = " Draw";
+      resu = draw;
     } else if (r == 4) {
-      resu = isMe ? "Player 1 move" : "Player 2 move";
+      resu = isMe ? player1turn : player2turn;
     } else {
-      resu = " Draw";
+      resu = draw;
     }
     return resu;
   }
 
   static String initialMsg() {
-    return "Player 1 move";
+    return player1turn;
   }
 
   int check(List<int> tiles) {
@@ -62,3 +62,9 @@ class XoxoUtils {
 const playerImage1 = "assets/icons/play2.png";
 const playerImage2 = "assets/icons/play1.png";
 const backGround = "assets/icons/bg.png";
+const player1turn = "Player 1’s Turn";
+const player2turn = "Player 2’s Turn";
+const player1win = "Player 1 Win";
+const player2win = "Player 2 Win";
+const draw = "Draw";
+const reset = "Reset Game";
