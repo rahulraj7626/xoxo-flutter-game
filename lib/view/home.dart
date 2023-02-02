@@ -30,6 +30,8 @@ class _XoxoHomeState extends State<XoxoHome> {
                       width: constraints.maxWidth,
                       msg: state.msg,
                       isMe: state.isme);
+
+                      
                 }
                 return WebScreen(
                     tiles: state.tiles,
