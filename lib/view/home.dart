@@ -25,6 +25,7 @@ class _XoxoHomeState extends State<XoxoHome> {
               return LayoutBuilder(builder: (context, constraints) {
                 if (constraints.maxWidth < 600) {
                   return MobileScreen(
+                    
                       tiles: state.tiles,
                       height: constraints.maxHeight,
                       width: constraints.maxWidth,
