@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../utils/xoxo_utils.dart';
 part 'xoxo_event.dart';
 part 'xoxo_state.dart';

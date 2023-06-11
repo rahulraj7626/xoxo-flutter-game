@@ -1,6 +1,5 @@
 part of 'xoxo_bloc.dart';
 
-@immutable
 abstract class XoxoEvent {}
 
 class SearchData extends XoxoEvent {
