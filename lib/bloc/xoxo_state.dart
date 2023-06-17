@@ -14,12 +14,12 @@ abstract class XoxoState {
 class XoxpInitial extends XoxoState {}
 
 class XoxoPlayState extends XoxoState {
-  final List<int> tiles;
-  final String msg;
-  final bool isme;
+  final List<int> tilesValue;
+  final String msgValue;
+  final bool ismeStatus;
   XoxoPlayState({
-    required this.tiles,
-    required this.msg,
-    required this.isme,
-  }) : super(tiles: tiles, msg: msg, isme: isme);
+    required this.tilesValue,
+    required this.msgValue,
+    required this.ismeStatus,
+  }) : super(tiles: tilesValue, msg: msgValue, isme: ismeStatus);
 }

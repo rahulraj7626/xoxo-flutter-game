@@ -34,7 +34,7 @@ class WebScreen extends StatelessWidget {
           Flexible(
             flex: 2,
             child: Container(
-              margin: EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(12)),
               child: GridView.count(
