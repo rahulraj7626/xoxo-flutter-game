@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:simple_game/bloc/xoxo_bloc.dart';
-import 'package:simple_game/view/home.dart';
+import 'package:simple_game/features/game/presentation/pages/home.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'features/game/presentation/bloc/xoxo_bloc.dart';
 
 void main() {
   runApp(

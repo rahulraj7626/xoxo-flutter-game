@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../utils/xoxo_utils.dart';
+import '../../domain/usecases/xoxo_utils.dart';
 part 'xoxo_event.dart';
 part 'xoxo_state.dart';
 

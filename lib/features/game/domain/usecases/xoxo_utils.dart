@@ -1,3 +1,5 @@
+import '../../data/datasources/constants/string_constants.dart';
+
 class XoxoUtils {
   String checkResult(bool isMe, List<int> tiles) {
     String resu = "";
@@ -59,12 +61,4 @@ class XoxoUtils {
   }
 }
 
-const playerImage1 = "assets/icons/play2.png";
-const playerImage2 = "assets/icons/play1.png";
-const backGround = "assets/icons/bg.png";
-const player1turn = "Player 1’s Turn";
-const player2turn = "Player 2’s Turn";
-const player1win = "Player 1 Win";
-const player2win = "Player 2 Win";
-const draw = "Draw";
-const reset = "Reset Game";
+
