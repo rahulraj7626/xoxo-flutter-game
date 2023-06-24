@@ -1,4 +1,4 @@
-# simple_game
+# XOXO Game
 
 A new Flutter project.
 
