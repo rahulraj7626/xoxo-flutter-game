@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../data/datasources/constants/string_constants.dart';
-import '../bloc/xoxo_bloc.dart';
+import '../riverpod/xoxo_notifier.dart';
 
-OutlinedButton buttonWidget(BuildContext context) {
+OutlinedButton buttonWidget(BuildContext context, WidgetRef ref) {
   return OutlinedButton.icon(
     icon: const Icon(
       Icons.replay,
@@ -18,7 +18,7 @@ OutlinedButton buttonWidget(BuildContext context) {
       ),
     ),
     onPressed: () {
-      context.read<XoxoBloc>().add(ClearXoxo());
+      ref.read(xoxoProvider.notifier).clearXoxo();
     },
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.red,

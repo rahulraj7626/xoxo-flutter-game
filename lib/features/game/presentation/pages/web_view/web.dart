@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:simple_game/features/game/presentation/widgets/button_widget.dart';
 
 import '../../../data/datasources/constants/asset_constatnts.dart';
 import '../../widgets/gridview_widget.dart';
 import '../../widgets/widget_helper.dart';
 
-class WebScreen extends StatelessWidget {
+class WebScreen extends HookConsumerWidget {
   const WebScreen({
     Key? key,
     required this.tiles,
@@ -22,7 +23,7 @@ class WebScreen extends StatelessWidget {
   final bool isMe;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: height,
       width: width,
@@ -49,7 +50,7 @@ class WebScreen extends StatelessWidget {
                 const Spacer(),
                 msgWidget(msg),
                 const Spacer(),
-                buttonWidget(context),
+                buttonWidget(context, ref),
                 const Spacer(),
                 const Spacer(),
               ],

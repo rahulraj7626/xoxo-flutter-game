@@ -1,4 +1,4 @@
-part of 'xoxo_bloc.dart';
+part of 'xoxo_notifier.dart';
 
 abstract class XoxoState {
   final List<int> tiles;

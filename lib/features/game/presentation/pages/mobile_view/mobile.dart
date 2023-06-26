@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:simple_game/features/game/presentation/widgets/widget_helper.dart';
 import '../../../data/datasources/constants/asset_constatnts.dart';
 import '../../widgets/button_widget.dart';
 import '../../widgets/gridview_widget.dart';
 import '../web_view/web.dart';
 
-class MobileScreen extends StatelessWidget {
+class MobileScreen extends HookConsumerWidget {
   const MobileScreen({
     Key? key,
     required this.tiles,
@@ -22,7 +23,7 @@ class MobileScreen extends StatelessWidget {
   final bool isMe;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: height,
       width: width,
@@ -41,7 +42,7 @@ class MobileScreen extends StatelessWidget {
           const Spacer(),
           GridViewWidget(tiles: tiles),
           const Spacer(),
-          buttonWidget(context),
+          buttonWidget(context, ref),
           const Spacer(),
         ],
       ),
