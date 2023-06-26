@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:simple_game/features/game/presentation/pages/home.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'features/game/presentation/bloc/xoxo_bloc.dart';
 
 void main() {
   runApp(
-    BlocProvider<XoxoBloc>(
-      create: (context) => XoxoBloc(),
-      child: const MyApp(),
+    const ProviderScope(
+      child: MyApp(),
     ),
   );
 }

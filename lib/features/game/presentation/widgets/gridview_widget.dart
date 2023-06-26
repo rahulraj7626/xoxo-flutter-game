@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../data/datasources/constants/asset_constatnts.dart';
-import '../bloc/xoxo_bloc.dart';
+import '../riverpod/xoxo_notifier.dart';
 import 'widget_helper.dart';
 
-class GridViewWidget extends StatelessWidget {
+class GridViewWidget extends HookConsumerWidget {
   const GridViewWidget({
     super.key,
     required this.tiles,
@@ -14,7 +14,7 @@ class GridViewWidget extends StatelessWidget {
   final List<int>? tiles;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       margin: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -31,7 +31,7 @@ class GridViewWidget extends StatelessWidget {
               decoration: BoxDecoration(border: borderFun(i)),
               child: InkWell(
                 onTap: () {
-                  context.read<XoxoBloc>().add(PlayerClick(index: i));
+                  ref.read(xoxoProvider.notifier).playerClick(i);
                 },
                 child: Center(
                     child: tiles![i] == 0
